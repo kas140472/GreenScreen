@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Green Screen</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+  </head>
+  <body>
+
+    <!-- Header -->
+    <header class="w3-container w3-theme w3-padding" id="myHeader">
+      <div class="w3-center">
+        <h4>CHANGE IMAGE BACKGROUND</h4>
+        <h1 class="w3-xxxlarge w3-animate-bottom">GREEN SCREEN ALGORITHM</h1>
+          <div class="w3-padding-32">
+            <button class="w3-btn w3-xlarge w3-dark-grey w3-hover-light-grey" onclick="document.getElementById('id01').style.display='block'" style="font-weight:900;">ABOUT</button>
+          </div>
+      </div>
+    </header>
+
+    <!-- Modal -->
+    <div id="id01" class="w3-modal">
+      <div class="w3-modal-content w3-card-4 w3-animate-top">
+        <header class="w3-container w3-theme-l1"> 
+          <span onclick="document.getElementById('id01').style.display='none'"
+          class="w3-button w3-display-topright">×</span>
+          <h4>ABOUT</h4>
+        </header>
+        <div class="w3-padding">
+          <p>Upload the foreground image (an image with a green (more green than red or blue) background) and the background image. The Green Screen algorithm will replace the foreground images's background with the background image.</p>
+          <p>This webpage uses the dukelearntoprogram SimpleImage library's methods to manipulate image pixels and JavaScript functions to code the Green Screen algorithm. Part of w3Schools' CSS template has been used for webpage design.
+            CodePen link to webpage:
+            Link
+          </p>
+        </div>
+        <footer class="w3-container w3-theme-l1">
+          <p>Made by KAS</p>
+        </footer>
+      </div>
+    </div>
+        
+    <script src="http://www.dukelearntoprogram.com/course1/common/js/image/SimpleImage.js"></script>
+
+    <div class="w3-row-padding" id="divId1"> 
+      <div class="w3-full">
+        <div class="w3-card">
+          <h3 id="uploadId">UPLOAD IMAGES</h3>
+          <p class="imgMargin">Foreground Image:
+            <input type="file" multiple="false" accept="image/*" id="fgImg" onchange="loadFgImage()">
+          </p>
+          <p class="imgMargin">Background Image:
+            <input type="file" multiple="false" accept="image/*" id="bgImg" onchange="loadBgImage()">
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="w3-row w3-border">
+      <div class="w3-half w3-container w3-border" id="#divId3">
+        <div class="w3-half w3-container m2 w3-blue-grey"><p class="imgMargin">Foreground Image:</p></div>
+        <canvas id="cv1"></canvas>
+      </div>
+      <div class="w3-half w3-container w3-border" id="#divId4">
+        <div class="w3-half w3-container m2 w3-blue-grey"><p class="imgMargin">Background Image:</p></div>
+        <canvas id="cv2"></canvas>
+      </div>
+      <div class="w3-full w3-container w3-border" id="#divId5">
+        <div class="w3-half w3-container m2 w3-teal"><p class="imgMargin">Composite Image:</p></div>
+        <canvas id="cv3"></canvas>
+      </div>
+    </div>
+    <br>
+
+    <div class="w3-row-padding" id="divId2"> 
+      <div class="w3-full">
+        <div class="w3-card">
+          <input type="button" class="w3-button w3-theme" id="button1" value="Create composite" onclick="greenScreen()">
+          <input type="button" class="w3-button w3-theme" id="button2" value="Clear canvas" onclick="clearCanvas()"> 
+        </div>
+      </div>
+    </div>
+
+    <!--<div class="w3-row-padding" id="divId2"> 
+      <div class="w3-full">
+        <div class="w3-card">
+          <p id="sampleImgId"> 
+            Sample images: 
+            <br> 
+            <img class="overlayImages" id="overlayImg1" onclick="overlayImage1()" src="https://raw.githubusercontent.com/kas140472/GreenScreen/main/drewRobert.png" alt="drewRobert" width="80" height="80">
+            <img class="overlayImages" id="overlayImg2" onclick="overlayImage2()" src="https://raw.githubusercontent.com/kas140472/GreenScreen/main/dinos.png" alt="dinos" width="80" height="80">
+          </p>
+        </div>
+      </div>
+    </div>-->
+
+
+    <!-- Footer -->
+    <footer class="w3-container w3-theme-dark w3-padding-16">
+      <p><a href="https://github.com/kas140472" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/kriti-shukla-258396182/" target="_blank">LinkedIn</a></p>
+      <div style="position:relative;bottom:55px;" class="w3-tooltip w3-right">
+        <span class="w3-text w3-theme-light w3-padding">Go To Top</span>    
+        <a class="w3-text-white" href="#myHeader"><span class="w3-xlarge">
+        <i class="fa fa-chevron-circle-up"></i></span></a>
+      </div>
+      <p>Made by  <a href="https://github.com/kas140472" class="w3-btn w3-theme-light" target="_blank">KAS</a></p>
+    </footer>
+
+
+        <script src="functions.js"></script>
+        
+    </body>
+</html>

@@ -1,0 +1,29 @@
+canvas {
+  width: 200px;
+  height: 200px;
+  margin:10pt;
+  border: 1px solid gray;
+} 
+
+.imgMargin, #fgImg, #bgImg, #divId1, #divId2
+{
+  margin: 10px;
+}
+
+#uploadId, #sampleImgId
+{
+  border: 1px solid lightgoldenrodyellow;
+  padding: 15px;
+}
+
+#button1, #button2
+{
+  border: 3px solid lightgoldenrodyellow;
+  margin: 20px;
+}
+
+.overlayImages
+{
+  border: 1px solid lightgrey;
+  margin: 10px;
+}
